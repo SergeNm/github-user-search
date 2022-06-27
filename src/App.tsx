@@ -1,25 +1,22 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import Spinner from "./components/app/Spinner";
+const Users = React.lazy(() => import("./components/github-username/Users"));
+const Profile = React.lazy(
+  () => import("./components/github-username/pages/Profile")
+);
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Suspense fallback={<Spinner />}>
+      <Routes>
+        <Route path="/" element={<Users />} />
+        <Route path="/users" element={<Users />} />
+        <Route path="/users/:username" element={<Profile />} />
+      </Routes>
+    </React.Suspense>
   );
-}
+};
 
 export default App;

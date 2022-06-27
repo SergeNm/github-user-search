@@ -1,10 +1,10 @@
 import React from "react";
-import { Theme } from "../../../models/models";
+import { Theme } from "../models/models";
 import { FiMoon } from "react-icons/fi";
 import { BsLightningCharge } from "react-icons/bs";
-import { useAppDispatch } from "../../../redux/hooks";
-import { setTheme } from "../../../redux/slices/theme";
-import classNames from "../../../utils/classNames";
+import { useAppDispatch } from "../redux/hooks";
+import { setTheme } from "../redux/slices/theme";
+import classNames from "../utils/classNames";
 
 const ThemeButton = ({ themeName }: Theme) => {
   const dispatch = useAppDispatch();

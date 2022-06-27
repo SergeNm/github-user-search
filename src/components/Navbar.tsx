@@ -1,8 +1,8 @@
 import React from "react";
 import { BiMenu } from "react-icons/bi";
 import { Link } from "react-router-dom";
-import { useAppSelector } from "../../redux/hooks";
-import ThemeButton from "./components/ThemeButton";
+import { useAppSelector } from "../redux/hooks";
+import ThemeButton from "./ThemeButton";
 
 export default function Navbar() {
   const { themeName } = useAppSelector((state) => state.theme.theme);

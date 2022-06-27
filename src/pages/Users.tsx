@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
-import { useAppSelector, useAppDispatch } from "../../redux/hooks";
-import Search from "./Search";
-import SingleUser from "./components/SingleUser";
-import { fetchAllUsers } from "../../redux/thunks/users.thunk";
-import Spinner from "../app/Spinner";
-import classNames from "../../utils/classNames";
-import HomeButton from "../app/HomeButton";
-import { User } from "../../models/models";
-import Filter from "./components/Filter";
-import { setShowHistory } from "../../redux/slices/search.slice";
+import { useAppSelector, useAppDispatch } from "../redux/hooks";
+import Search from "../components/user/Search";
+import SingleUser from "../components/user/SingleUser";
+import { fetchAllUsers } from "../redux/thunks/users.thunk";
+import Spinner from "../components/Spinner";
+import classNames from "../utils/classNames";
+import HomeButton from "../components/HomeButton";
+import { User } from "../models/models";
+import Filter from "../components/user/Filter";
+import { setShowHistory } from "../redux/slices/search.slice";
 
 const Users = () => {
   const { themeName } = useAppSelector((state) => state.theme.theme);

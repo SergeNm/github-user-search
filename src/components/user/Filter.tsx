@@ -1,6 +1,6 @@
 import React from "react";
-import { useAppSelector, useAppDispatch } from "../../../redux/hooks";
-import { searchUsers } from "../../../redux/thunks/users.thunk";
+import { useAppSelector, useAppDispatch } from "../../redux/hooks";
+import { searchUsers } from "../../redux/thunks/users.thunk";
 
 const Filter = () => {
   const dispatch = useAppDispatch();

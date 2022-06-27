@@ -12,8 +12,9 @@ describe("Testing Integration of The Whole App", () => {
     expect(screen.getByText("Dark Mode")).toBeInTheDocument();
 
     fireEvent.click(screen.getByText("Dark Mode"));
-    expect(screen.getByText("Light Mode")).toBeInTheDocument();
-
+    await waitFor(() => {
+      expect(screen.getByText("Light Mode")).toBeInTheDocument();
+    });
     await waitFor(() => {
       expect(screen.getByText(/example1/i)).toBeInTheDocument();
     });

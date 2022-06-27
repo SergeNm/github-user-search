@@ -1,13 +1,12 @@
 import React, { useEffect } from "react";
 
-import Navbar from "../Navbar";
-import { UserDetail } from "../../../models/models";
+import { UserDetail } from "../../models/models";
 import SingleRipo from "./SingleRipo";
-import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { useParams } from "react-router-dom";
-import { fetchUserRepos } from "../../../redux/thunks/users.thunk";
-import Spinner from "../../app/Spinner";
-import classNames from "../../../utils/classNames";
+import { fetchUserRepos } from "../../redux/thunks/users.thunk";
+import Spinner from "../Spinner";
+import classNames from "../../utils/classNames";
 
 export default function UserDetails({
   bio,

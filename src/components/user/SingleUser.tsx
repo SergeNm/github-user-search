@@ -1,10 +1,10 @@
 import React from "react";
-import { User } from "../../../models/models";
+import { User } from "../../models/models";
 import { BiLinkExternal } from "react-icons/bi";
 import { MdPreview } from "react-icons/md";
 import { Link } from "react-router-dom";
-import { useAppSelector } from "../../../redux/hooks";
-import classNames from "../../../utils/classNames";
+import { useAppSelector } from "../../redux/hooks";
+import classNames from "../../utils/classNames";
 
 const SingleUser = ({ avatar_url, login, type }: User) => {
   const {themeName} = useAppSelector((state) => state.theme.theme);

@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
-import { fetchUser } from "../../../redux/thunks/users.thunk";
-import UserDetails from "../components/UserDetails";
+import { useAppDispatch, useAppSelector } from "../redux/hooks";
+import { fetchUser } from "../redux/thunks/users.thunk";
+import UserDetails from "../components/user/UserDetails";
 import { useParams } from "react-router-dom";
-import Spinner from "../../app/Spinner";
+import Spinner from "../components/Spinner";
 
 const Profile = () => {
   const dispatch = useAppDispatch();

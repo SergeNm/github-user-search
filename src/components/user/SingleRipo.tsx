@@ -1,8 +1,8 @@
 import React from "react";
-import { Repo } from "../../../models/models";
+import { Repo } from "../../models/models";
 import { DiCss3, DiHtml5, DiJavascript1 } from "react-icons/di";
-import { useAppSelector } from "../../../redux/hooks";
-import classNames from "../../../utils/classNames";
+import { useAppSelector } from "../../redux/hooks";
+import classNames from "../../utils/classNames";
 
 const SingleRipo = ({
   name,

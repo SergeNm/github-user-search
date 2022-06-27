@@ -1,10 +1,10 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Spinner from "./components/app/Spinner";
-import Navbar from "./components/github-username/Navbar";
-const Users = React.lazy(() => import("./components/github-username/Users"));
+import Spinner from "./components/Spinner";
+import Navbar from "./components//Navbar";
+const Users = React.lazy(() => import("./pages/Users"));
 const Profile = React.lazy(
-  () => import("./components/github-username/pages/Profile")
+  () => import("./pages/Profile")
 );
 
 const App: React.FC = () => {

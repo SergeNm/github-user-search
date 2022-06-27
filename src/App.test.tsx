@@ -4,12 +4,15 @@ import App from "./App";
 
 describe("Testing Integration of The Whole App", () => {
   render(<App />);
-  test("Should Render The App, User Data Fetched, then User should Searched", async () => {
+  test("Should Render The App, User Data Fetched, then User should be Searched", async () => {
     expect(screen.getByTestId("spinner")).toBeInTheDocument();
     await waitFor(() => {
       expect(screen.getAllByText(/Home/i)[0]).toBeInTheDocument();
     });
     expect(screen.getByText("Dark Mode")).toBeInTheDocument();
+
+    fireEvent.click(screen.getByText("Dark Mode"));
+    expect(screen.getByText("Light Mode")).toBeInTheDocument();
 
     await waitFor(() => {
       expect(screen.getByText(/example1/i)).toBeInTheDocument();

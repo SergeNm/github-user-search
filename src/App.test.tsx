@@ -1,9 +1,35 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import React from "react";
+import { render, screen, waitFor, fireEvent } from "./testUtils";
+import App from "./App";
 
-test('renders learn react link', () => {
+describe("Testing Integration of The Whole App", () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  test("Should Render The App, User Data Fetched, then User should Searched", async () => {
+    expect(screen.getByTestId("spinner")).toBeInTheDocument();
+    await waitFor(() => {
+      expect(screen.getAllByText(/Home/i)[0]).toBeInTheDocument();
+    });
+    expect(screen.getByText("Dark Mode")).toBeInTheDocument();
+
+    await waitFor(() => {
+      expect(screen.getByText(/example1/i)).toBeInTheDocument();
+    });
+
+    const searchInput = screen.getByLabelText(/Search/i);
+    fireEvent.change(searchInput, { target: { value: "example2" } });
+
+    await waitFor(() => {
+      expect(screen.getByText(/example2/i)).toBeInTheDocument();
+    });
+    await waitFor(() => {
+      expect(screen.getByText(/example1/i)).toBeInTheDocument();
+    });
+    await waitFor(() => {
+      expect(screen.queryByText(/example1/i)).not.toBeInTheDocument();
+    });
+    fireEvent.change(searchInput, { target: { value: "example1" } });
+    await waitFor(() => {
+      expect(screen.getByText(/example1/i)).toBeInTheDocument();
+    });
+  });
 });

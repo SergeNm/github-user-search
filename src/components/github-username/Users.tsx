@@ -6,7 +6,6 @@ import { fetchAllUsers } from "../../redux/thunks/users.thunk";
 import Spinner from "../app/Spinner";
 import classNames from "../../utils/classNames";
 import HomeButton from "../app/HomeButton";
-import Navbar from "./Navbar";
 import { User } from "../../models/models";
 import Filter from "./components/Filter";
 import { setShowHistory } from "../../redux/slices/search.slice";
@@ -57,7 +56,7 @@ const Users = () => {
       <div className="p-8 pt-2 md:flex flex-wrap justify-around">
         {isLoading && <Spinner />}
 
-        {
+        {items &&
           items.map(({ avatar_url, type, login }: User, i) => {
             return (
               <SingleUser

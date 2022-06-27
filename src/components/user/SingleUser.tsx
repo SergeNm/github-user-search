@@ -3,13 +3,15 @@ import { User } from "../../models/models";
 import { BiLinkExternal } from "react-icons/bi";
 import { MdPreview } from "react-icons/md";
 import { Link } from "react-router-dom";
-import { useAppSelector } from "../../redux/hooks";
+import { useAppSelector, useAppDispatch } from "../../redux/hooks";
 import classNames from "../../utils/classNames";
+import { addToCart } from "../../redux/slices/user.slice";
 
 const SingleUser = ({ avatar_url, login, type }: User) => {
   const {themeName} = useAppSelector((state) => state.theme.theme);
+  const dispatch = useAppDispatch();
   return (
-    <div className="py-4">
+    <div className="py-4" onClick={()=>dispatch(addToCart(login))}>
       <div className={"w-72 p-4 rounded-lg border shadow-md "+ classNames(themeName === 'dark'? "bg-gray-600 text-gray-200 border-gray-800" : "bg-white text-gray-900 border-gray-200")}>
         <div className="flex flex-col items-center pb-10">
           <img

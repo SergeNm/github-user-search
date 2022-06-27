@@ -2,6 +2,7 @@ import React from "react";
 import { BiMenu } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import { useAppSelector } from "../redux/hooks";
+import Cart from "./Cart";
 import ThemeButton from "./ThemeButton";
 
 export default function Navbar() {
@@ -68,8 +69,9 @@ export default function Navbar() {
               </li>
             </ul>
             <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
-              <li className="flex items-center">
+              <li className="flex md:flex-row items-center">
                 <ThemeButton themeName={themeName} />
+                <Cart />
               </li>
             </ul>
           </div>

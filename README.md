@@ -1,4 +1,4 @@
-<img src="https://github.com/atlp-rwanda/github-user-search/actions/workflows/react.js.ymll/badge.svg">
+
 <img src="https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/sergenm/db1426d72a32d7a1ee55d7233b318be2/raw/github-user-search__heads_master.json">
 
 # Getting Started with Create React App
